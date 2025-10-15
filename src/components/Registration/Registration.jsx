@@ -1,4 +1,7 @@
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React from 'react'
+import { resume } from 'react-dom/server';
+import { auth } from '../../firebase/firebase.init';
 
 const Registration = () => {
 
@@ -6,8 +9,16 @@ const Registration = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log("Clicked", email)
-        console.log("Clicked", password)
+        console.log("Clicked", email);
+        console.log("Clicked", password);
+
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
