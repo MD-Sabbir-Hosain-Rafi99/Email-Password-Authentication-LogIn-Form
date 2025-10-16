@@ -8,6 +8,7 @@ import Root from './layout/Root.jsx';
 import Home from './components/Home/Home.jsx';
 import Login from './components/LogIn/Login.jsx';
 import Registration from './components/Registration/Registration.jsx';
+import Privecy from './components/Privecy.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/registration',
         Component: Registration
+      },
+      {
+        path: '/privecy',
+        Component: Privecy
       }
     ]
   }
